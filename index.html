@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- Use premium fonts to avoid standard template looks -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Sans+Thai:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Clean, minimal navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <span class="logo" id="site-logo">Portfolio</span>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#works">Works</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Self Introduction / Bio -->
+        <section id="about" class="section-about fade-in">
+            <div class="container container-narrow">
+                <h1 class="hero-title" id="bio-title"></h1>
+                <p class="hero-subtitle" id="bio-subtitle"></p>
+                <div class="hero-description" id="bio-description"></div>
+            </div>
+        </section>
+
+        <!-- Dynamic Works / Gallery -->
+        <section id="works" class="section-works">
+            <div class="container container-wide">
+                <div class="section-header">
+                    <h2>Selected Works</h2>
+                </div>
+                
+                <!-- Category Filters (Injected by JS) -->
+                <div class="category-filters" id="category-filters">
+                    <!-- Buttons like "งานสถาปัตย์", "งานระบบภายใน" will appear here -->
+                </div>
+
+                <!-- Image Grid (Injected by JS) -->
+                <div class="gallery-grid" id="gallery-grid">
+                    <!-- Images will appear here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-contact">
+            <div class="container container-narrow">
+                <h2>Let's Talk</h2>
+                <div class="contact-card" id="contact-info">
+                   <!-- Contact details will appear here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
