@@ -71,6 +71,16 @@ async function fetchData() {
         loadData(MOCK_API_DATA);
         
         alert("⚠️ แจ้งเตือนจากระบบ: \nไม่สามารถเข้าถึงข้อมูลบน Google Sheets ได้\n\nสาเหตุหลักคือตอนที่คุณ Deploy Google Apps Script น่าจะลืมตั้งค่า 'สิทธิ์การเข้าถึง (Who has access)' เป็น 'ทุกคน (Anyone)' ครับ\n\nรบกวนกลับไปทำตามขั้นตอนใหม่อีกครั้ง แล้วระบบจะเชื่อมต่อสำเร็จและข้อความนี้จะหายไปครับ");
+    } finally {
+        // Fade out the loading screen smoothly
+        const loader = document.getElementById('premium-loader');
+        if (loader) {
+            loader.style.opacity = '0';
+            setTimeout(() => {
+                loader.style.visibility = 'hidden';
+                loader.style.display = 'none';
+            }, 800);
+        }
     }
 }
 
