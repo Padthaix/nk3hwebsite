@@ -128,11 +128,24 @@ function renderGallery(categories) {
         btn.dataset.filter = catId;
         filtersContainer.appendChild(btn);
 
+        // Function to extract Google Drive ID and make it a direct image link
+        const getDirectImageUrl = (url) => {
+            if (url.includes('drive.google.com/file/d/')) {
+                const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+                if (match && match[1]) {
+                    // Get a 1200px thumbnail which is fast and bypasses Google's recent security block for direct images
+                    return `https://drive.google.com/thumbnail?id=${match[1]}&sz=w1200`;
+                }
+            }
+            return url;
+        };
+
         // Create Images for this category
         category.images.forEach(imgUrl => {
+            const directUrl = getDirectImageUrl(imgUrl);
             allImagesHTML += `
                 <div class="gallery-item" data-category="${catId}">
-                    <img src="${imgUrl}" alt="${category.name} Work" loading="lazy">
+                    <img src="${directUrl}" alt="${category.name} Work" loading="lazy">
                 </div>
             `;
         });
