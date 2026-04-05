@@ -95,7 +95,6 @@ function loadData(data) {
     const contactHtml = `
         <p><strong>Email:</strong> <a href="mailto:${data.contact.email}">${data.contact.email}</a></p>
         <p><strong>Phone:</strong> ${data.contact.phone}</p>
-        <p><strong>IG:</strong> <a href="https://instagram.com/xxx">${data.contact.instagram}</a></p>
         <p><strong>Location:</strong> ${data.contact.address}</p>
     `;
     document.getElementById('contact-info').innerHTML = contactHtml;
